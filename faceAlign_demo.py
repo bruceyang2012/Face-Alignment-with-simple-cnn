@@ -42,7 +42,7 @@ model = cnn()
 model.load_weights(filepath='weights.75-0.74206.hdf5')
 
 # 加载图像
-image_path='C:/DeepLearning/faceID/faceAlign/results/lena.jpg'
+image_path='lena.jpg'
 img = image.load_img(image_path,grayscale=True, target_size=(96, 96))
 
 # 图像预处理
@@ -63,18 +63,10 @@ print(points)
 
 fig = plt.figure()  
 axis = fig.add_subplot(111)  
-#设置标题  
-axis.set_title('Scatter Plot')  
-#设置X轴标签  
-plt.xlabel('X')  
-#设置Y轴标签  
-plt.ylabel('Y')  
 #画人脸
 axis.imshow(img, cmap='gray')
 #画散点图  
 axis.scatter(points[0::2],points[1::2],c = 'r',marker = 'o')  
-#设置图标  
-plt.legend('x1')  
 #显示所画的图  
 plt.show()  
 
