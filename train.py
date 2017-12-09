@@ -11,8 +11,8 @@ from keras.optimizers import SGD, Adam
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from keras.preprocessing.image import ImageDataGenerator
 
-FTRAIN = 'C:/DeepLearning/faceID/faceAlign/data/training/training.csv'
-FTEST = 'C:/DeepLearning/faceID/faceAlign/data/test/test.csv'
+FTRAIN = './data/training/training.csv'
+FTEST = './data/test/test.csv'
 
 def load(test=False, cols=None):
     
@@ -111,15 +111,4 @@ if __name__ == "__main__":
     plt.yscale('log')
     plt.show()
     f.savefig('loss.png')
-    
-    #predict test images
-    X_test, _ = load2d(test=True)
-    y_test = model.predict(X_test)
-    
-    fig = plt.figure(figsize=(6,6))
-    for i in range(16):
-        axis = fig.add_subplot(4,4,i+1,xticks=[],yticks=[])
-        plot_sample(X_test[i], y_test[i], axis)
-    plt.show()
-    fig.savefig('predicted.png')         
-    
+     
