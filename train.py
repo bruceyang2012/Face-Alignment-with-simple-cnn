@@ -63,28 +63,7 @@ if __name__ == "__main__":
     x_train, x_test, y_train, y_test = train_test_split(X,y,test_size=0.25,random_state=10)
     print ("x_train.shape", x_train.shape)
     print ("y_train.shape", y_train.shape)
-    datagen = ImageDataGenerator()
-    
-#    #neural net
-#    model = Sequential()
-#    model.add(Conv2D(32, 3, 3, input_shape=(96, 96, 1)))    
-#    model.add(Activation('relu'))
-#    model.add(MaxPooling2D(pool_size=(2,2)))
-#    
-#    model.add(Conv2D(64, 2, 2))
-#    model.add(Activation('relu'))
-#    model.add(MaxPooling2D(pool_size=(2,2)))    
-#
-#    model.add(Conv2D(128, 2, 2))
-#    model.add(Activation('relu'))
-#    model.add(MaxPooling2D(pool_size=(2,2)))    
-#    
-#    model.add(Flatten())
-#    model.add(Dense(500))
-#    model.add(Activation('relu'))
-#    model.add(Dense(500))
-#    model.add(Activation('relu'))
-#    model.add(Dense(30))    
+    datagen = ImageDataGenerator()    # you can do data augmentation from this function
                 
     # my model(bn)
     model = Sequential()
@@ -114,7 +93,6 @@ if __name__ == "__main__":
     
     model.add(Dense(30))
     
-#    sgd = SGD(lr=0.01, momentum=0.9, nesterov=True)
     adam = Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
     model.compile(loss='mean_squared_error', optimizer=adam, metrics=['accuracy'])
     
@@ -143,15 +121,5 @@ if __name__ == "__main__":
         axis = fig.add_subplot(4,4,i+1,xticks=[],yticks=[])
         plot_sample(X_test[i], y_test[i], axis)
     plt.show()
-    fig.savefig('C:/DeepLearning/faceID/faceAlign/results/predicted.png')        
-    
-    #write out submission
-#    submission = pd.DataFrame(index=pd.RangeIndex(start=1, stop=27124, step=1), columns=['Location'])
-#    submission['Location'] = y_test.reshape(-1,1)
-#    submission.index.name = 'RowId'
-#    submission.to_csv('keypoints_pred.csv', index=True, header=True)
-    
-    
-    
-    
+    fig.savefig('predicted.png')         
     
