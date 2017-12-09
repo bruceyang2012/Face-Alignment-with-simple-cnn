@@ -48,4 +48,4 @@ for i in range(25):
     axis = fig.add_subplot(5,5,i+1,xticks=[],yticks=[])
     plot_sample(X_test[i], y_test[i], axis)
 plt.show()
-fig.savefig('C:/DeepLearning/faceID/faceAlign/results/predicted.png')   
+fig.savefig('predicted.png')   
