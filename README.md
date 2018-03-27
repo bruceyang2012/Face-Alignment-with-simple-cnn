@@ -2,7 +2,7 @@
 This is a implementation of Face Aligment with simple cnn in Keras, which is the second step of my **FaceID system**. You can find another two repositories  as follows:
 1. [Face-detection-with-mobilenet-ssd](https://github.com/bruceyang2012/Face-detection-with-mobilenet-ssd)
 2. [Face-Alignment-with-simple-cnn](https://github.com/bruceyang2012/Face-Alignment-with-simple-cnn)
-3. Face-identification-with-cnn-triplet-loss(To do)
+3. [Face-identification-with-cnn-triplet-loss](https://github.com/bruceyang2012/Face-identification-with-cnn-triplet-loss) (To do)
 
 ## Some Details
 Today there are lots of excellent face alignment algorithms, but they are somehow too complex to implement, and most of methods based on deep learning don't meet the requirement of real-time, here I introduce an efficient method based on simple convolution neural network, which can realize real-time face feature points detection.
