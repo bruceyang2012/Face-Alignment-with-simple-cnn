@@ -41,16 +41,16 @@ def cnn():
 model = cnn()
 model.load_weights(filepath='weights.75-0.74206.hdf5')
 
-# 加载图像
+# load a image
 image_path='lena.jpg'
 img = image.load_img(image_path,grayscale=True, target_size=(96, 96))
 
-# 图像预处理
+# preprocessing
 x = image.img_to_array(img)
 x /= 255
 x = np.expand_dims(x, axis=0)
 
-#测试一张人脸的时间
+# time test
 t1 = time.time()
 pred = model.predict(x)
 t2 = time.time()
@@ -63,10 +63,8 @@ print(points)
 
 fig = plt.figure()  
 axis = fig.add_subplot(111)  
-#画人脸
+# plot face
 axis.imshow(img, cmap='gray')
-#画散点图  
 axis.scatter(points[0::2],points[1::2],c = 'r',marker = 'o')  
-#显示所画的图  
 plt.show()  
 
