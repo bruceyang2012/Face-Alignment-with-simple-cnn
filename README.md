@@ -9,6 +9,5 @@ Today there are lots of excellent face alignment algorithms, but they are someho
 
 It costs me about only 10 minutes with cpu to train a model on a training set containing 7049 images. It's really fast, and the testing time is about 60ms per face. You can easily improve the accuray using different methods, such as make the convnet structure deeper or make a data augmentation and so on.
 
-Here are some testing results.
-
-![image](https://github.com/bruceyang2012/Face-Alignment-with-simple-cnn/raw/master/predicted.png)
+## testing results.
+<div align=center><img src="https://github.com/bruceyang2012/Face-Alignment-with-simple-cnn/raw/master/predicted.png"></div>
